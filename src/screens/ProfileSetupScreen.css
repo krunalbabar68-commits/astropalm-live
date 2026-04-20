@@ -1,0 +1,151 @@
+/**
+ * ============================================
+ * AI PALM READER - PROFILE SETUP STYLES
+ * ============================================
+ */
+
+.profile-setup-screen {
+  min-height: 100vh;
+}
+
+.profile-setup-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 24px;
+  gap: 24px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.profile-title {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   FORM CARD
+   ============================================ */
+
+.profile-form-card {
+  width: 100%;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   INPUT CUSTOMIZATIONS
+   ============================================ */
+
+/* Date input specific styling for consistent look */
+input[type="date"],
+input[type="time"] {
+  color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   ACTIONS
+   ============================================ */
+
+.form-actions {
+  margin-top: 12px;
+}
+
+/* ============================================
+   PRIVACY NOTE
+   ============================================ */
+
+.privacy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: 0;
+}
+
+.privacy-note svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 375px) {
+  .profile-title {
+    font-size: 1.75rem;
+  }
+  
+  .profile-subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Landscape adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  .profile-setup-content {
+    padding-top: 16px;
+  }
+  
+  .profile-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .form-actions {
+    grid-column: span 2;
+  }
+  
+  .privacy-note {
+    padding-bottom: 24px;
+  }
+}

@@ -1,0 +1,131 @@
+/**
+ * ============================================
+ * AI PALM READER - HOROSCOPE SCREEN STYLES
+ * ============================================
+ */
+
+.horoscope-screen {
+  min-height: 100vh;
+}
+
+.horoscope-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+/* ============================================
+   SELECT VIEW
+   ============================================ */
+
+.zodiac-select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 16px;
+}
+
+.select-title {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.zodiac-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.zodiac-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #ffffff;
+}
+
+.zodiac-btn:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: #8b5cf6;
+  transform: translateY(-2px);
+}
+
+.zodiac-icon {
+  font-size: 2rem;
+}
+
+.zodiac-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   RESULT VIEW
+   ============================================ */
+
+.horoscope-result-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center loader */
+}
+
+.horoscope-display {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.horoscope-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.zodiac-badge {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+.change-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.horoscope-text-card {
+  background: rgba(30, 20, 50, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 24px;
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 375px) {
+  .zodiac-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

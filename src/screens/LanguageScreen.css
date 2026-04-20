@@ -1,0 +1,132 @@
+/**
+ * ============================================
+ * AI PALM READER - LANGUAGE SCREEN (GRID FIX)
+ * ============================================
+ */
+
+.language-screen {
+  height: 100vh;
+  overflow: hidden; /* Screen ko hile se rokna */
+}
+
+.language-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: space-between; /* Space out Top, Middle, Bottom */
+  padding: 20px 0;
+}
+
+/* ============================================
+   HEADER AREA
+   ============================================ */
+
+.language-header {
+  text-align: center;
+  flex-shrink: 0;
+  padding: 0 20px;
+}
+
+.language-icon-circle {
+  width: 56px;
+  height: 56px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.language-title {
+  font-family: var(--font-family-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.language-subtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
+}
+
+/* ============================================
+   GRID AREA (2 COLUMNS)
+   ============================================ */
+
+.language-selection-area {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Vertical Center */
+  padding: 0 16px;
+}
+
+.language-grid-fixed {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Columns */
+  gap: 12px;
+  width: 100%;
+}
+
+.lang-card-compact {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  height: 80px; /* Uniform height */
+}
+
+.lang-card-inner {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+  height: 100%;
+}
+
+.lang-card-compact.active {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.lang-flag-icon {
+  font-size: 24px;
+}
+
+.lang-text-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.lang-primary-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.lang-native-name {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   FOOTER AREA
+   ============================================ */
+
+.language-action-footer {
+  padding: 16px 24px;
+  flex-shrink: 0;
+}
+
+/* Small screens adjustments */
+@media (max-height: 660px) {
+  .language-container { padding: 10px 0; }
+  .lang-card-compact { height: 70px; }
+  .language-title { font-size: 1.5rem; }
+  .language-icon-circle { margin-bottom: 8px; }
+}

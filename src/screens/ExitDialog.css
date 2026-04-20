@@ -1,0 +1,48 @@
+/**
+ * ============================================
+ * AI PALM READER - EXIT DIALOG STYLES
+ * ============================================
+ */
+
+.exit-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.exit-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+.exit-icon {
+  font-size: 32px;
+}
+
+.exit-message {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.exit-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}

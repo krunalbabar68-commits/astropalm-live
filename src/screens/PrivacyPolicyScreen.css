@@ -1,0 +1,51 @@
+/**
+ * ============================================
+ * AI PALM READER - PRIVACY POLICY STYLES
+ * ============================================
+ */
+
+.privacy-screen {
+  min-height: 100vh;
+}
+
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+.privacy-card {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.policy-section {
+  margin-bottom: 24px;
+}
+
+.policy-section h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.policy-section p {
+  margin: 0 0 12px;
+  font-size: 0.9375rem;
+}
+
+.policy-section strong {
+  color: #8b5cf6;
+}
+
+.policy-footer {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+}

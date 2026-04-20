@@ -1,0 +1,200 @@
+/**
+ * ============================================
+ * AI PALM READER - SPLASH SCREEN STYLES
+ * ============================================
+ */
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0f0a1e;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* ============================================
+   LOGO ANIMATION
+   ============================================ */
+
+.splash-logo-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.splash-logo {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  animation: logo-float 3s ease-in-out infinite;
+}
+
+.splash-palm-path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-palm 2s ease-out forwards;
+}
+
+.splash-eye {
+  opacity: 0;
+  animation: fade-in 1s ease-out 1.5s forwards, pulse-eye 3s ease-in-out infinite 2.5s;
+}
+
+.splash-star {
+  opacity: 0;
+}
+
+.s1 { animation: twinkle 2s ease-in-out infinite 1s; }
+.s2 { animation: twinkle 3s ease-in-out infinite 1.2s; }
+.s3 { animation: twinkle 2.5s ease-in-out infinite 1.4s; }
+.s4 { animation: twinkle 3.5s ease-in-out infinite 1.6s; }
+
+/* Glow Rings */
+.splash-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  opacity: 0;
+}
+
+.ring-1 {
+  width: 100px;
+  height: 100px;
+  animation: ripple 3s ease-out infinite;
+}
+
+.ring-2 {
+  width: 100px;
+  height: 100px;
+  animation: ripple 3s ease-out infinite 0.5s;
+}
+
+.ring-3 {
+  width: 100px;
+  height: 100px;
+  animation: ripple 3s ease-out infinite 1s;
+}
+
+/* ============================================
+   TEXT ANIMATION
+   ============================================ */
+
+.splash-text-container {
+  text-align: center;
+}
+
+.splash-title {
+  font-family: var(--font-family-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slide-up-fade 0.8s ease-out 0.5s forwards;
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.splash-tagline {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slide-up-fade 0.8s ease-out 0.8s forwards;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   LOADER BAR
+   ============================================ */
+
+.splash-loader {
+  position: absolute;
+  bottom: 64px;
+  width: 200px;
+  opacity: 0;
+  animation: fade-in 0.5s ease-out 1s forwards;
+}
+
+.loader-bar-bg {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+  width: 0%;
+  animation: load-progress 2.5s ease-in-out forwards;
+}
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+@keyframes draw-palm {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-eye {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes ripple {
+  0% { width: 100px; height: 100px; opacity: 0.8; border-width: 2px; }
+  100% { width: 260px; height: 260px; opacity: 0; border-width: 0px; }
+}
+
+@keyframes slide-up-fade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+@keyframes load-progress {
+  0% { width: 0%; }
+  50% { width: 60%; }
+  100% { width: 100%; }
+}

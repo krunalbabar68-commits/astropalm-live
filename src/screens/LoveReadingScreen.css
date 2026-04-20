@@ -1,0 +1,145 @@
+/**
+ * ============================================
+ * AI PALM READER - LOVE READING STYLES
+ * ============================================
+ */
+
+.love-screen {
+  min-height: 100vh;
+}
+
+.love-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.love-header {
+  text-align: center;
+  margin: 24px 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heart-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.2);
+}
+
+.heart-icon {
+  font-size: 40px;
+  filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.5));
+}
+
+.love-title {
+  font-family: var(--font-family-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.love-subtitle {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+/* ============================================
+   FORM
+   ============================================ */
+
+.love-form-card {
+  width: 100%;
+}
+
+.love-actions {
+  margin-top: 24px;
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+
+.love-loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* ============================================
+   RESULT
+   ============================================ */
+
+.love-result {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.result-header {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.result-title {
+  font-family: var(--font-family-display);
+  font-size: 1.5rem;
+  color: #f472b6;
+  margin: 0 0 8px;
+}
+
+.result-question {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.result-body {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.result-body p {
+  margin-bottom: 16px;
+}
+
+.result-body p:last-child {
+  margin-bottom: 0;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .result-actions {
+    flex-direction: row;
+  }
+  
+  .result-actions > * {
+    flex: 1;
+  }
+}

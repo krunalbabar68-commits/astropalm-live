@@ -1,0 +1,229 @@
+/**
+ * ============================================
+ * AI PALM READER - HOME SCREEN (SCROLLABLE + LARGE ICONS)
+ * ============================================
+ */
+
+.home-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Allow scrolling on Home Screen specifically */
+  overflow-y: auto; 
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 20px; /* Thoda gap badhaya for better breathing room */
+  padding-bottom: 100px; /* Extra padding for bottom nav */
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.home-header {
+  margin-top: 8px;
+  padding: 0 4px;
+}
+
+.home-greeting {
+  font-family: var(--font-family-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.greeting-text {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.user-name {
+  display: block;
+  font-size: 1.75rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-subtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 4px 0 0;
+}
+
+/* ============================================
+   DAILY INSIGHT (QUICK ACTION)
+   ============================================ */
+
+.daily-card {
+  padding: 16px !important;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.daily-card-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.daily-icon-wrapper {
+  width: 56px; /* Icon wrapper size increased */
+  height: 56px;
+  background: rgba(251, 191, 36, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.daily-icon {
+  font-size: 28px; /* Icon size increased */
+}
+
+.daily-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.daily-desc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* ============================================
+   FEATURE GRID
+   ============================================ */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(140px, auto); /* Keep card size same */
+  gap: 16px;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center;     /* Center content horizontally */
+  text-align: center;
+  padding: 16px;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.feature-card:active {
+  transform: scale(0.98);
+}
+
+/* Large Card (Palm Scan) */
+.feature-large {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 20px;
+}
+
+/* Icon Container - BIGGER ICONS */
+.feature-icon-container {
+  width: 64px;  /* Increased wrapper size */
+  height: 64px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px; /* Slightly more rounded */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4px;
+}
+
+.feature-icon {
+  font-size: 36px; /* ✨ KEY CHANGE: Much larger icons inside grid */
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+/* Specific adjustment for Large Card Icon */
+.feature-large .feature-icon-container {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0;
+  margin-right: 16px;
+}
+
+.feature-large .feature-icon {
+  font-size: 40px; /* Even bigger for main feature */
+}
+
+/* Info Text */
+.feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.feature-desc {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 4px 0 0;
+  line-height: 1.3;
+}
+
+/* Colors & Glows */
+.feature-purple { border-color: rgba(139, 92, 246, 0.3); }
+.feature-cyan { border-color: rgba(6, 182, 212, 0.3); }
+.feature-pink { border-color: rgba(236, 72, 153, 0.3); }
+.feature-gold { border-color: rgba(251, 191, 36, 0.3); }
+.feature-red { border-color: rgba(239, 68, 68, 0.3); }
+
+/* Glow Background */
+.feature-bg-glow {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.2;
+  pointer-events: none;
+  background: radial-gradient(circle, currentColor 0%, transparent 70%);
+}
+
+.feature-purple .feature-bg-glow { color: rgba(139, 92, 246, 0.5); }
+.feature-cyan .feature-bg-glow { color: rgba(6, 182, 212, 0.5); }
+.feature-pink .feature-bg-glow { color: rgba(236, 72, 153, 0.5); }
+.feature-gold .feature-bg-glow { color: rgba(251, 191, 36, 0.5); }
+.feature-red .feature-bg-glow { color: rgba(239, 68, 68, 0.5); }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (min-width: 640px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .feature-large {
+    grid-column: span 3;
+  }
+}

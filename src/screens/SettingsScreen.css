@@ -1,0 +1,123 @@
+/**
+ * ============================================
+ * AI PALM READER - SETTINGS SCREEN STYLES
+ * ============================================
+ */
+
+.settings-screen {
+  min-height: 100vh;
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+
+  /* ✅ TOP GAP: taaki Language card header se cut na ho */
+  padding-top: 80;
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-left: 12px;
+  margin: 0;
+}
+
+/* ============================================
+   SETTING ITEMS
+   ============================================ */
+
+.settings-card {
+  overflow: hidden;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.setting-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.setting-item:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.setting-item.border-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-icon {
+  font-size: 1.25rem;
+  margin-right: 16px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.setting-info {
+  flex: 1;
+}
+
+.setting-label {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.setting-value {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 8px;
+}
+
+.setting-arrow {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Danger Item */
+.setting-item.danger .setting-label {
+  color: #ef4444;
+}
+
+.setting-item.danger .setting-icon {
+  filter: hue-rotate(150deg); /* Shift emoji color if needed */
+}
+
+/* ============================================
+   VERSION INFO
+   ============================================ */
+
+.app-version {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 16px;
+}
+
+/* ============================================
+   MODAL TEXT
+   ============================================ */
+
+.clear-modal-text {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}

@@ -1,0 +1,145 @@
+/**
+ * ============================================
+ * AI PALM READER - ONBOARDING SCREEN STYLES (LARGE ICONS)
+ * ============================================
+ */
+
+.onboarding-screen {
+  height: 100%;
+}
+
+.onboarding-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header */
+.onboarding-header {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.skip-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* ============================================
+   VISUAL AREA (ICON SIZE INCREASED)
+   ============================================ */
+
+.slide-visual-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 300px; /* Space for large icon */
+}
+
+.slide-circle-bg {
+  position: absolute;
+  /* Bada Background Circle */
+  width: 320px; 
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+  animation: pulse 3s infinite ease-in-out;
+  z-index: 1;
+}
+
+.slide-emoji {
+  /* ✨ KEY CHANGE: Emoji size badha kar 180px kar diya */
+  font-size: 180px; 
+  z-index: 2;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   TEXT AREA
+   ============================================ */
+
+.slide-text-container {
+  padding: 0 32px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-bottom: 24px;
+}
+
+.slide-title {
+  font-family: var(--font-family-display);
+  font-size: 2.25rem; /* Title thoda bada */
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slide-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+/* Pagination */
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  width: 28px;
+  background: #8b5cf6;
+  border-radius: 5px;
+}
+
+/* Footer */
+.onboarding-footer {
+  padding: 16px 24px calc(32px + env(safe-area-inset-bottom));
+  flex-shrink: 0;
+}
+
+/* Mobile Responsiveness for small screens */
+@media (max-height: 700px) {
+  .slide-emoji {
+    font-size: 140px;
+  }
+  .slide-circle-bg {
+    width: 260px;
+    height: 260px;
+  }
+  .slide-visual-container {
+    min-height: 220px;
+  }
+}
