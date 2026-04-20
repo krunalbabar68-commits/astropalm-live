@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Icon Generator</title>
+</head>
+<body style="background: #111; color: white; font-family: sans-serif; text-align: center; padding: 50px;">
+  <h1>🔮 Generating Icons...</h1>
+  <p>Please wait, rendering your app icons...</p>
+  <div id="container"></div>
+
+  <script>
+    // The SVG Code from your favicon.svg
+    const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><defs><linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#8b5cf6"/><stop offset="50%" style="stop-color:#a78bfa"/><stop offset="100%" style="stop-color:#06b6d4"/></linearGradient><linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0f0a1e"/><stop offset="50%" style="stop-color:#1a1333"/><stop offset="100%" style="stop-color:#0d1b2a"/></linearGradient><radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.6"/><stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="8" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="512" height="512" fill="url(#bgGradient)"/><circle cx="256" cy="256" r="200" fill="url(#glowGradient)" opacity="0.5"/><g filter="url(#glow)"><path d="M256 90 C290 90, 320 110, 330 150 L340 200 C355 195, 380 200, 385 235 C390 265, 375 290, 350 295 L340 296 L345 350 C350 400, 320 450, 256 450 C192 450, 162 400, 167 350 L172 296 L162 295 C137 290, 122 265, 127 235 C132 200, 157 195, 172 200 L182 150 C192 110, 222 90, 256 90Z" fill="none" stroke="url(#mainGradient)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M175 250 C150 240, 130 260, 135 290 C140 315, 160 325, 175 320" fill="none" stroke="url(#mainGradient)" stroke-width="10" stroke-linecap="round"/><path d="M200 155 C200 120, 215 85, 230 70 C245 85, 250 110, 248 140" fill="none" stroke="url(#mainGradient)" stroke-width="10" stroke-linecap="round"/><path d="M256 145 C256 100, 256 60, 256 45 C256 60, 256 100, 256 145" fill="none" stroke="url(#mainGradient)" stroke-width="10" stroke-linecap="round"/><path d="M312 155 C312 120, 297 85, 282 70 C267 85, 262 110, 264 140" fill="none" stroke="url(#mainGradient)" stroke-width="10" stroke-linecap="round"/><path d="M337 250 C362 240, 382 260, 377 290 C372 315, 352 325, 337 320" fill="none" stroke="url(#mainGradient)" stroke-width="10" stroke-linecap="round"/></g><circle cx="256" cy="310" r="22" fill="#06b6d4"/><circle cx="256" cy="310" r="10" fill="#0f0a1e"/></svg>`;
+
+    const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+
+    async function generate() {
+      const img = new Image();
+      const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+      
+      img.onload = async () => {
+        for (let size of sizes) {
+          const canvas = document.createElement('canvas');
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, size, size);
+          
+          const dataUrl = canvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.download = `icon-${size}x${size}.png`;
+          link.href = dataUrl;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          
+          const p = document.createElement('p');
+          p.innerText = `Downloaded icon-${size}x${size}.png`;
+          document.getElementById('container').appendChild(p);
+          
+          await new Promise(r => setTimeout(r, 200)); // Delay to prevent browser blocking
+        }
+      };
+      img.src = url;
+    }
+
+    generate();
+  </script>
+</body>
+</html>

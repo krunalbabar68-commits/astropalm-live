@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ============================================
+         AI PALM READER - MAIN HTML ENTRY
+         ============================================ -->
+    
+    <!-- Character Encoding & Viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+    <!-- Primary Meta Tags -->
+    <title>AI Palm Reader – Tarot & Astrology Guidance</title>
+    <meta name="title" content="AI Palm Reader – Tarot & Astrology Guidance" />
+    <meta name="description" content="Discover your destiny through AI-powered palm reading, tarot cards, and personalized astrology guidance. Get daily insights, love readings, and spiritual reflection." />
+    <meta name="keywords" content="palm reading, tarot cards, astrology, horoscope, spiritual guidance, AI, fortune telling, zodiac, daily guidance, love reading" />
+    <meta name="author" content="AI Palm Reader" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Theme & App Configuration -->
+    <meta name="theme-color" content="#0f0a1e" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="msapplication-TileColor" content="#0f0a1e" />
+    <meta name="msapplication-navbutton-color" content="#0f0a1e" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- PWA Configuration -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Palm Reader" />
+    <meta name="application-name" content="AI Palm Reader" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ai-palm-reader.app/" />
+    <meta property="og:title" content="AI Palm Reader – Tarot & Astrology Guidance" />
+    <meta property="og:description" content="Discover your destiny through AI-powered palm reading, tarot cards, and personalized astrology guidance." />
+    <meta property="og:image" content="/icons/icon-512x512.png" />
+    <meta property="og:site_name" content="AI Palm Reader" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ai-palm-reader.app/" />
+    <meta property="twitter:title" content="AI Palm Reader – Tarot & Astrology Guidance" />
+    <meta property="twitter:description" content="Discover your destiny through AI-powered palm reading, tarot cards, and personalized astrology guidance." />
+    <meta property="twitter:image" content="/icons/icon-512x512.png" />
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-192x192.png" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Fonts - Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+    
+    <!-- Apple Splash Screens (Optional - for iOS) -->
+    <meta name="apple-mobile-web-app-orientations" content="portrait" />
+    
+    <!-- Prevent Zoom on Input Focus (iOS) -->
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Critical Inline Styles for Faster FCP -->
+    <style>
+      /* Critical CSS for initial render */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: linear-gradient(135deg, #0f0a1e 0%, #1a1333 50%, #0d1b2a 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        position: relative;
+      }
+      
+      #root {
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Initial Loading State */
+      .initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f0a1e 0%, #1a1333 50%, #0d1b2a 100%);
+        z-index: 9999;
+        gap: 24px;
+      }
+      
+      .initial-loader-logo {
+        width: 80px;
+        height: 80px;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      .initial-loader-text {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.05em;
+      }
+      
+      .initial-loader-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(139, 92, 246, 0.2);
+        border-top: 3px solid #8b5cf6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Hide loader when React mounts */
+      .app-loaded .initial-loader {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+    </style>
+    
+    <!-- No Script Fallback -->
+    <noscript>
+      <style>
+        .initial-loader { display: none !important; }
+        .noscript-message {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          padding: 24px;
+          text-align: center;
+          background: linear-gradient(135deg, #0f0a1e 0%, #1a1333 50%, #0d1b2a 100%);
+          color: white;
+        }
+        .noscript-message h1 { font-size: 1.5rem; margin-bottom: 16px; }
+        .noscript-message p { color: rgba(255,255,255,0.7); max-width: 400px; }
+      </style>
+    </noscript>
+  </head>
+  
+  <body>
+    <!-- Initial Loading State (Shown before React hydrates) -->
+    <div class="initial-loader" id="initial-loader">
+      <svg class="initial-loader-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Palm/Hand Icon -->
+        <defs>
+          <linearGradient id="palmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#a78bfa;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <circle cx="50" cy="50" r="45" stroke="url(#palmGradient)" stroke-width="2" fill="none" opacity="0.3"/>
+        <circle cx="50" cy="50" r="38" stroke="url(#palmGradient)" stroke-width="1" fill="none" opacity="0.2"/>
+        <!-- Stylized Palm -->
+        <path 
+          d="M50 20 
+             C55 20, 60 25, 60 35
+             L60 45
+             C65 43, 72 45, 72 52
+             C72 58, 68 62, 62 62
+             L60 62
+             L60 70
+             C60 78, 55 85, 50 85
+             C45 85, 40 78, 40 70
+             L40 62
+             L38 62
+             C32 62, 28 58, 28 52
+             C28 45, 35 43, 40 45
+             L40 35
+             C40 25, 45 20, 50 20Z"
+          fill="none"
+          stroke="url(#palmGradient)"
+          stroke-width="2"
+          filter="url(#glow)"
+        />
+        <!-- Eye in palm center -->
+        <ellipse cx="50" cy="52" rx="8" ry="6" stroke="url(#palmGradient)" stroke-width="1.5" fill="none"/>
+        <circle cx="50" cy="52" r="3" fill="url(#palmGradient)"/>
+        <!-- Decorative stars -->
+        <circle cx="25" cy="25" r="1.5" fill="#8b5cf6" opacity="0.6"/>
+        <circle cx="75" cy="30" r="1" fill="#06b6d4" opacity="0.5"/>
+        <circle cx="80" cy="70" r="1.5" fill="#a78bfa" opacity="0.6"/>
+        <circle cx="20" cy="75" r="1" fill="#8b5cf6" opacity="0.5"/>
+      </svg>
+      <span class="initial-loader-text">AI Palm Reader</span>
+      <div class="initial-loader-spinner"></div>
+    </div>
+    
+    <!-- React Root -->
+    <div id="root"></div>
+    
+    <!-- NoScript Fallback -->
+    <noscript>
+      <div class="noscript-message">
+        <h1>🔮 JavaScript Required</h1>
+        <p>AI Palm Reader requires JavaScript to run. Please enable JavaScript in your browser settings and refresh the page.</p>
+      </div>
+    </noscript>
+    
+    <!-- Main Application Script -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Hide initial loader after app loads -->
+    <script>
+      window.addEventListener('load', function() {
+        // Add small delay to ensure React has mounted
+        setTimeout(function() {
+          document.body.classList.add('app-loaded');
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
