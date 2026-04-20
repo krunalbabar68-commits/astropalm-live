@@ -1,0 +1,81 @@
+.image-uploader {
+  width: 100%;
+}
+
+/* Restored Original Box Styles */
+.upload-zone {
+  width: 100%;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px dashed rgba(139, 92, 246, 0.3);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.upload-icon-circle {
+  width: 64px;
+  height: 64px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #8b5cf6;
+}
+
+.upload-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.upload-subtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Camera Preview Fix */
+.preview-window {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #000;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #8b5cf6;
+  margin-bottom: 16px;
+}
+
+.live-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.camera-overlay-ui {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.error-msg {
+  color: #ff4d4d;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 12px;
+}

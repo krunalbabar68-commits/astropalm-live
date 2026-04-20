@@ -1,0 +1,73 @@
+/**
+ * ============================================
+ * AI PALM READER - DAILY GUIDANCE CARD STYLES
+ * ============================================
+ */
+
+.daily-guidance-card {
+  width: 100%;
+}
+
+.guidance-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ============================================
+   SECTION
+   ============================================ */
+
+.guidance-section {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guidance-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.section-icon {
+  font-size: 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fbbf24; /* Gold */
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.section-content {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding-left: 44px; /* Align with title */
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.guidance-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

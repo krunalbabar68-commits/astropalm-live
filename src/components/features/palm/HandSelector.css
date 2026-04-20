@@ -1,0 +1,144 @@
+/**
+ * ============================================
+ * AI PALM READER - HAND SELECTOR (CIRCULAR ROW FIX)
+ * ============================================
+ */
+
+.hand-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center; /* Center everything */
+}
+
+.hand-selector-title {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ============================================
+   CARDS GRID (SIDE BY SIDE)
+   ============================================ */
+
+.hand-cards {
+  display: flex; /* Use Flex instead of Grid for centering */
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px; /* Gap between two circles */
+  width: 100%;
+}
+
+.hand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* CIRCULAR SHAPE */
+  width: 140px; 
+  height: 140px;
+  border-radius: 50% !important; /* Force Circle */
+  
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 0 !important; /* Remove inner padding */
+}
+
+.hand-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hand-card.selected {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: #22d3ee;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  transform: scale(1.1); /* Pop effect */
+}
+
+/* ============================================
+   EMOJI ICON
+   ============================================ */
+
+.hand-emoji-wrapper {
+  /* Remove wrapper background, just center emoji */
+  width: auto;
+  height: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 8px;
+}
+
+.hand-emoji {
+  font-size: 48px; /* Bigger Emoji */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ============================================
+   INFO TEXT
+   ============================================ */
+
+.hand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hand-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Hide description inside circle to keep it clean */
+.hand-desc {
+  display: none; 
+}
+
+/* ============================================
+   CHECKMARK
+   ============================================ */
+
+.hand-check {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background: #22d3ee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f0a1e;
+  border: 3px solid #0f0a1e; /* Border to separate from card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   MEANING TEXT (BELOW)
+   ============================================ */
+
+.hand-meaning {
+  text-align: center;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}

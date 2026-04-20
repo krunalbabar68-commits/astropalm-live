@@ -1,0 +1,111 @@
+/**
+ * ============================================
+ * AI PALM READER - TAROT DECK STYLES
+ * ============================================
+ */
+
+.tarot-deck-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 24px;
+}
+
+.tarot-deck {
+  position: relative;
+  width: 140px;
+  height: 238px; /* Match card size md */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tarot-deck:hover {
+  transform: scale(1.05);
+}
+
+.tarot-deck.drawing {
+  pointer-events: none;
+  animation: shuffle 1s ease-in-out infinite;
+}
+
+/* ============================================
+   STACKED CARDS
+   ============================================ */
+
+.deck-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: #1a1333;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-1 {
+  transform: translate(4px, 4px) rotate(2deg);
+  z-index: 1;
+}
+
+.card-2 {
+  transform: translate(-4px, 2px) rotate(-1deg);
+  z-index: 2;
+}
+
+.card-3 {
+  transform: translate(2px, -2px) rotate(1deg);
+  z-index: 3;
+}
+
+.card-top {
+  z-index: 4;
+  /* Use TarotCard component for visual */
+  border: none;
+  background: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   VISUALS
+   ============================================ */
+
+.deck-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+  z-index: 0;
+  animation: pulse-glow 3s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.deck-instruction {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes shuffle {
+  0% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-10px) rotate(-5deg); }
+  50% { transform: translateX(10px) rotate(5deg); }
+  75% { transform: translateX(-5px) rotate(-2deg); }
+  100% { transform: translateX(0) rotate(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}

@@ -1,0 +1,186 @@
+/**
+ * ============================================
+ * AI PALM READER - BOTTOM NAV STYLES (FIXED POSITION)
+ * ============================================
+ */
+
+.bottom-nav {
+  /* Fix position to viewport */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  /* Height calculation */
+  height: calc(var(--footer-height) + env(safe-area-inset-bottom));
+  
+  /* Stay on top of everything */
+  z-index: 1000; 
+  
+  /* Prevent interaction with content underneath */
+  pointer-events: auto;
+  
+  /* Safe area padding for iPhones */
+  padding-bottom: env(safe-area-inset-bottom);
+  
+  /* Hardware acceleration to prevent jitter during scroll */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Glass background separated */
+.bottom-nav-glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 10, 30, 0.95); /* More opaque to hide content behind */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.bottom-nav-content {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 8px;
+  z-index: 2; /* Content above glass */
+}
+
+/* ============================================
+   NAV TABS
+   ============================================ */
+
+.nav-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-tab.active {
+  color: #8b5cf6;
+}
+
+/* ============================================
+   ICON & GLOW
+   ============================================ */
+
+.nav-icon-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-tab svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+}
+
+.nav-tab.active svg {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.6));
+}
+
+.nav-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: nav-pulse 2s infinite ease-in-out;
+}
+
+@keyframes nav-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* ============================================
+   LABEL
+   ============================================ */
+
+.nav-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-tab.active .nav-label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ============================================
+   ACTIVE INDICATOR (TOP LINE)
+   ============================================ */
+
+.nav-tab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 24px;
+  height: 3px;
+  background: #8b5cf6;
+  border-radius: 0 0 4px 4px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.6);
+}
+
+.nav-tab.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 320px) {
+  .nav-label {
+    font-size: 0.625rem;
+  }
+  
+  .nav-tab svg {
+    width: 20px;
+    height: 20px;
+  }
+}

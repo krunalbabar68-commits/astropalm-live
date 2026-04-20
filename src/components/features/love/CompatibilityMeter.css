@@ -1,0 +1,68 @@
+/**
+ * ============================================
+ * AI PALM READER - COMPATIBILITY METER STYLES
+ * ============================================
+ */
+
+.compatibility-meter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.meter-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meter-svg {
+  transform: rotate(-90deg);
+}
+
+.meter-progress {
+  transition: stroke-dashoffset 1.5s ease-in-out;
+  filter: drop-shadow(0 0 4px #ec4899);
+}
+
+.meter-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.meter-icon {
+  font-size: 1.25rem;
+  animation: pulse-heart 1.5s infinite;
+}
+
+.meter-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.meter-caption {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f472b6;
+  margin-top: 8px;
+}
+
+@keyframes pulse-heart {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

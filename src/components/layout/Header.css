@@ -1,0 +1,90 @@
+/**
+ * ============================================
+ * AI PALM READER - HEADER STYLES (FIXED HEIGHT)
+ * ============================================
+ */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px; /* Fixed Height */
+  background: rgba(15, 10, 30, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 16px;
+}
+
+.header-left {
+  width: 40px; /* Space for back button if needed later */
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-title {
+  font-family: var(--font-family-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header-glass {
+  background: rgba(15, 10, 30, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header-transparent {
+  background: transparent;
+  border: none;
+}
+
+.title-glow {
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-right {
+  width: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.header-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.settings-btn svg {
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.settings-btn:hover svg {
+  color: #8b5cf6;
+}

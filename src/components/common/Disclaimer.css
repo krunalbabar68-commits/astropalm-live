@@ -1,0 +1,26 @@
+/**
+ * ============================================
+ * AI PALM READER - DISCLAIMER STYLES
+ * ============================================
+ */
+
+.app-disclaimer {
+  width: 100%;
+  padding: 16px 0;
+  text-align: center;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.app-disclaimer:hover {
+  opacity: 1;
+}
+
+.app-disclaimer p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+  max-width: 80%;
+  margin: 0 auto;
+}

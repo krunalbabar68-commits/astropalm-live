@@ -1,0 +1,184 @@
+/**
+ * ============================================
+ * AI PALM READER - COSMIC BACKGROUND STYLES
+ * ============================================
+ */
+
+.cosmic-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  overflow: hidden;
+  background-color: #0f0a1e;
+}
+
+.cosmic-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   VARIANTS (Base Gradients)
+   ============================================ */
+
+.cosmic-default .cosmic-base {
+  background: radial-gradient(circle at 50% 120%, #2d1b4e 0%, #1a1333 40%, #0f0a1e 100%);
+}
+
+.cosmic-deep .cosmic-base {
+  background: radial-gradient(circle at 50% 50%, #1a1333 0%, #0a0510 100%);
+}
+
+.cosmic-purple .cosmic-base {
+  background: radial-gradient(circle at 30% 80%, #4c1d95 0%, #1e1b4b 50%, #0f0a1e 100%);
+}
+
+.cosmic-midnight .cosmic-base {
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+}
+
+.cosmic-calm .cosmic-base {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+
+/* ============================================
+   NEBULA GLOWS
+   ============================================ */
+
+.cosmic-nebula::before,
+.cosmic-nebula::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: nebula-drift 20s infinite alternate ease-in-out;
+}
+
+.cosmic-nebula::before {
+  top: -20%;
+  left: -20%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+}
+
+.cosmic-nebula::after {
+  bottom: -20%;
+  right: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+  animation-delay: -10s;
+}
+
+@keyframes nebula-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10%, 10%) scale(1.1); }
+}
+
+/* ============================================
+   STARS (Pure CSS)
+   ============================================ */
+
+.cosmic-stars-sm {
+  background-image: radial-gradient(1px 1px at 10px 10px, white, transparent),
+                    radial-gradient(1px 1px at 150px 250px, white, transparent),
+                    radial-gradient(1px 1px at 300px 50px, white, transparent),
+                    radial-gradient(1px 1px at 500px 400px, white, transparent);
+  background-size: 550px 550px;
+  opacity: 0.4;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.cosmic-stars-md {
+  background-image: radial-gradient(2px 2px at 50px 160px, white, transparent),
+                    radial-gradient(2px 2px at 250px 330px, white, transparent),
+                    radial-gradient(2px 2px at 450px 120px, white, transparent);
+  background-size: 400px 400px;
+  opacity: 0.6;
+  animation: twinkle 6s ease-in-out infinite alternate-reverse;
+}
+
+.cosmic-stars-lg {
+  background-image: radial-gradient(3px 3px at 100px 100px, white, transparent),
+                    radial-gradient(3px 3px at 350px 450px, white, transparent);
+  background-size: 600px 600px;
+  opacity: 0.8;
+  animation: twinkle 8s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* ============================================
+   PARTICLES
+   ============================================ */
+
+.cosmic-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cosmic-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.3;
+  box-shadow: 0 0 10px white;
+}
+
+.cosmic-particle-1 { top: 20%; left: 20%; width: 3px; height: 3px; animation: float 15s infinite; }
+.cosmic-particle-2 { top: 60%; left: 80%; width: 4px; height: 4px; animation: float 20s infinite reverse; }
+.cosmic-particle-3 { top: 80%; left: 30%; width: 2px; height: 2px; animation: float 12s infinite; }
+.cosmic-particle-4 { top: 30%; left: 70%; width: 3px; height: 3px; animation: float 18s infinite reverse; }
+.cosmic-particle-5 { top: 50%; left: 50%; width: 2px; height: 2px; animation: float 25s infinite; }
+
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 0.5; }
+  100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+}
+
+/* ============================================
+   INTENSITY & OVERLAY
+   ============================================ */
+
+.cosmic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cosmic-intensity-low .cosmic-overlay { background: rgba(0,0,0,0.6); }
+.cosmic-intensity-medium .cosmic-overlay { background: rgba(0,0,0,0.3); }
+.cosmic-intensity-high .cosmic-overlay { background: rgba(0,0,0,0.1); }
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmic-nebula::before,
+  .cosmic-nebula::after,
+  .cosmic-stars-sm,
+  .cosmic-stars-md,
+  .cosmic-stars-lg,
+  .cosmic-particle {
+    animation: none !important;
+  }
+}

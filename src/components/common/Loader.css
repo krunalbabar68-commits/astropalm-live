@@ -1,0 +1,381 @@
+/**
+ * ============================================
+ * AI PALM READER - LOADER STYLES
+ * ============================================
+ */
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.loader-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.loader-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ============================================
+   BASE LOADER
+   ============================================ */
+
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.loader-sm {
+  width: 24px;
+  height: 24px;
+}
+
+.loader-md {
+  width: 40px;
+  height: 40px;
+}
+
+.loader-lg {
+  width: 60px;
+  height: 60px;
+}
+
+/* ============================================
+   COLORS
+   ============================================ */
+
+.loader-primary {
+  color: #8b5cf6;
+}
+
+.loader-secondary {
+  color: #06b6d4;
+}
+
+.loader-white {
+  color: #ffffff;
+}
+
+.loader-cyan {
+  color: #22d3ee;
+}
+
+.loader-gold {
+  color: #fbbf24;
+}
+
+/* ============================================
+   SPINNER VARIANT
+   ============================================ */
+
+.loader-spinner {
+  animation: spin 1.2s linear infinite;
+}
+
+.loader-spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader-spinner-ring:nth-child(1) {
+  opacity: 0.3;
+}
+
+.loader-spinner-ring:nth-child(2) {
+  opacity: 0.6;
+  animation-duration: 1.5s;
+  border-width: 2px;
+}
+
+.loader-spinner-ring:nth-child(3) {
+  opacity: 0.9;
+  animation-duration: 2s;
+  border-width: 1px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   DOTS VARIANT
+   ============================================ */
+
+.loader-dots {
+  gap: 8px;
+}
+
+.loader-dot {
+  width: 25%;
+  height: 25%;
+  background: currentColor;
+  border-radius: 50%;
+  animation: dot-pulse 1.4s ease-in-out infinite;
+}
+
+.loader-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loader-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dot-pulse {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* ============================================
+   PULSE VARIANT
+   ============================================ */
+
+.loader-pulse-circle {
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  border-radius: 50%;
+  animation: pulse-grow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-grow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+}
+
+/* ============================================
+   COSMIC VARIANT
+   ============================================ */
+
+.loader-cosmic-orbit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: spin 3s linear infinite;
+}
+
+.loader-cosmic-planet {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  background: currentColor;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.loader-cosmic-planet:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: twinkle 1s ease-in-out infinite;
+}
+
+.loader-cosmic-planet:nth-child(2) {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  animation: twinkle 1s ease-in-out infinite 0.33s;
+}
+
+.loader-cosmic-planet:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: twinkle 1s ease-in-out infinite 0.66s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   BARS VARIANT
+   ============================================ */
+
+.loader-bars {
+  gap: 4px;
+}
+
+.loader-bar {
+  width: 15%;
+  height: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  animation: bar-wave 1.2s ease-in-out infinite;
+}
+
+.loader-bar:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loader-bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loader-bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.loader-bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bar-wave {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   CRYSTAL VARIANT
+   ============================================ */
+
+.loader-crystal-svg {
+  width: 100%;
+  height: 100%;
+  animation: crystal-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+@keyframes crystal-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+/* ============================================
+   LOADER TEXT
+   ============================================ */
+
+.loader-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin: 0;
+  animation: text-pulse 2s ease-in-out infinite;
+}
+
+@keyframes text-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 375px) {
+  .loader-sm {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .loader-md {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .loader-lg {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .loader-text {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .loader,
+  .loader-spinner,
+  .loader-spinner-ring,
+  .loader-dot,
+  .loader-pulse-circle,
+  .loader-cosmic-orbit,
+  .loader-cosmic-planet,
+  .loader-bar,
+  .loader-crystal-svg,
+  .loader-text {
+    animation: none;
+  }
+  
+  /* Show static loading indicator */
+  .loader-spinner-ring {
+    border-color: transparent;
+    border-top-color: currentColor;
+  }
+  
+  .loader-dot {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}

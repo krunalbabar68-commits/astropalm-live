@@ -1,0 +1,86 @@
+/**
+ * ============================================
+ * AI PALM READER - CHAT INPUT STYLES
+ * ============================================
+ */
+
+.chat-input-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 8px 8px 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.chat-input-wrapper:focus-within {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* ============================================
+   TEXTAREA
+   ============================================ */
+
+.chat-textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 0;
+  resize: none;
+  outline: none;
+  max-height: 100px;
+  line-height: 1.4;
+  overflow-y: auto;
+}
+
+.chat-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================
+   SEND BUTTON
+   ============================================ */
+
+.chat-send-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.chat-send-btn.active {
+  background: #8b5cf6;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.chat-send-btn.active:hover {
+  transform: scale(1.05);
+  background: #7c3aed;
+}
+
+.chat-send-btn.active:active {
+  transform: scale(0.95);
+}

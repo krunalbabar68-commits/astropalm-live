@@ -1,0 +1,327 @@
+/**
+ * ============================================
+ * AI PALM READER - GLASS CARD STYLES
+ * ============================================
+ */
+
+/* ============================================
+   BASE GLASS CARD
+   ============================================ */
+
+.glass-card {
+  /* Appearance */
+  background: rgba(30, 20, 50, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 24px;
+  
+  /* Shadow */
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  /* Transitions */
+  transition: all 0.3s ease;
+  
+  /* Position */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+/* Light variant */
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Dark variant */
+.glass-card-dark {
+  background: rgba(15, 10, 30, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Intense variant */
+.glass-card-intense {
+  background: rgba(30, 20, 50, 0.9);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Subtle variant */
+.glass-card-subtle {
+  background: rgba(30, 20, 50, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   PADDING
+   ============================================ */
+
+.glass-card-padding-none {
+  padding: 0;
+}
+
+.glass-card-padding-sm {
+  padding: 16px;
+}
+
+.glass-card-padding-md {
+  padding: 24px;
+}
+
+.glass-card-padding-lg {
+  padding: 32px;
+}
+
+/* ============================================
+   HOVERABLE
+   ============================================ */
+
+.glass-card-hoverable {
+  cursor: default;
+}
+
+.glass-card-hoverable:hover {
+  background: rgba(40, 30, 60, 0.75);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.glass-card-light.glass-card-hoverable:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-dark.glass-card-hoverable:hover {
+  background: rgba(20, 15, 35, 0.85);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+/* ============================================
+   CLICKABLE
+   ============================================ */
+
+.glass-card-clickable {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glass-card-clickable:active {
+  transform: translateY(-2px);
+}
+
+.glass-card-clickable:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.6);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+
+.glass-card-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.glass-card-glow-purple {
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-glow-cyan {
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(6, 182, 212, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-glow-pink {
+  border-color: rgba(236, 72, 153, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(236, 72, 153, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-glow-gold {
+  border-color: rgba(251, 191, 36, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(251, 191, 36, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.1);
+  }
+}
+
+/* ============================================
+   GRADIENT BORDER
+   ============================================ */
+
+.glass-card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ============================================
+   SHIMMER EFFECT
+   ============================================ */
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card-hoverable:hover::after,
+.glass-card-clickable:hover::after {
+  animation: shimmer 2s infinite;
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 767px) {
+  .glass-card {
+    border-radius: 20px;
+  }
+  
+  .glass-card-padding-md {
+    padding: 20px;
+  }
+  
+  .glass-card-padding-lg {
+    padding: 24px;
+  }
+  
+  /* Reduce blur on mobile for performance */
+  .glass-card,
+  .glass-card-dark,
+  .glass-card-intense {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+  
+  .glass-card-light,
+  .glass-card-subtle {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .glass-card-hoverable,
+  .glass-card-clickable {
+    transition: none;
+  }
+  
+  .glass-card-glow {
+    animation: none;
+  }
+  
+  .glass-card::after {
+    animation: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .glass-card {
+    border-width: 2px;
+  }
+}
+
+/* ============================================
+   FALLBACK FOR NON-SUPPORTING BROWSERS
+   ============================================ */
+
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-card,
+  .glass-card-dark,
+  .glass-card-intense {
+    background: rgba(30, 20, 50, 0.95);
+  }
+  
+  .glass-card-light {
+    background: rgba(50, 40, 70, 0.9);
+  }
+  
+  .glass-card-subtle {
+    background: rgba(30, 20, 50, 0.85);
+  }
+}
